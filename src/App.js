@@ -11,13 +11,14 @@ class App extends Component {
   };
 
   handleSomething = () => {
-    console.log('App.jsx setState update')
-  }
+    console.log("App.jsx setState update");
+  };
 
   render() {
+    const { posts } = this.state;
     return (
       <div className="App">
-        <Posts posts={this.state.posts} cb={this.handleSomething} />
+        <Posts posts={posts} cb={this.handleSomething} />
       </div>
     );
   }
