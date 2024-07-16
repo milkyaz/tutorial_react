@@ -1,6 +1,14 @@
-import React from "react";
 import { Posts } from "./components/Posts";
-export default class App extends React.Component {
+import React, { Component } from "react";
+
+class App extends Component {
+  state = {
+    posts: [
+      { id: "abc1", name: "JS Basics" },
+      { id: "abc2", name: "JS Advanced" },
+      { id: "abc3", name: "React JS" },
+    ],
+  };
   render() {
     return (
       <div className="App">
@@ -9,3 +17,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;
