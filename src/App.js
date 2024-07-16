@@ -9,10 +9,15 @@ class App extends Component {
       { id: "abc3", name: "React JS" },
     ],
   };
+
+  handleSomething = () => {
+    console.log('App.jsx setState update')
+  }
+
   render() {
     return (
       <div className="App">
-        <Posts posts={this.state.posts} />
+        <Posts posts={this.state.posts} cb={this.handleSomething} />
       </div>
     );
   }
