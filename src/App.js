@@ -1,4 +1,5 @@
 import { Posts } from "./components/Posts";
+import { useState } from "react";
 import React, { Component } from "react";
 
 class App extends Component {
@@ -10,15 +11,15 @@ class App extends Component {
     ],
   };
 
-  handleSomething = () => {
-    console.log("App.jsx setState update");
+  removePost = () => {
+    
   };
 
   render() {
     const { posts } = this.state;
     return (
       <div className="App">
-        <Posts posts={posts} cb={this.handleSomething} />
+        <Posts posts={posts} cb={this.removePost} />
       </div>
     );
   }
