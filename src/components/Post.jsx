@@ -1,9 +1,9 @@
 export function Post(props) {
-  const { name, cb } = props;
+  const { name } = props;
   return (
     <h2>
       {name}
-      <button onClick={cb}>delete</button>
+      <button onClick={props.handle}>delete</button>
     </h2>
   );
 }
