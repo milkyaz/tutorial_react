@@ -1,5 +1,5 @@
 export function Post(props) {
-  const { name, cb } = props;
+  const { name } = props;
   return (
     <h2>
       {name}
