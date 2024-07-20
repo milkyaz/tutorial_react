@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import React, { Component } from "react";
 
 class App extends Component {
+  //Вот этот state с тремя записями мы передаем в Posts
   state = {
     posts: [
       { id: "abc1", name: "JS Basics", year: 2020 },
@@ -15,6 +16,7 @@ class App extends Component {
     console.log('geg')
   };
 
+  //Предыдущий коммент(//Вот этот state с тремя записями мы передаем в Posts). Передаём вот сюда вниз..
   render() {
     const { posts } = this.state;
 
