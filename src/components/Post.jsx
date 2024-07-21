@@ -3,7 +3,9 @@ export function Post(props) {
   return (
     <h2>
       {name}
-      <button onClick={props.handle}>delete</button>
+      <button onClick={props.onDelete} id="my-btn">
+        delete
+      </button>
     </h2>
   );
 }

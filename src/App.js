@@ -1,19 +1,25 @@
 import { Posts } from "./components/Posts";
-import { useState, useEffect } from "react";
+import { Gallery } from "./components/Gallery";
 import React, { Component } from "react";
 
 class App extends Component {
   //Вот этот state с тремя записями мы передаем в Posts
   state = {
     posts: [
-      { id: "abc1", name: "JS Basics", year: 2020 },
-      { id: "abc2", name: "JS Advanced" },
-      { id: "abc3", name: "React JS" },
+      { id: "my-bsc", name: "JS Basics" },
+      { id: "my-adv", name: "JS Advanced" },
+      { id: "my-rct", name: "React JS" },
     ],
   };
-
-  handleClick = () => {
-    console.log('geg')
+  deleteElem = () => {
+    const posts = this.state.posts;
+    if (posts.length > 0) {
+      const lastIndex = posts.length - 1;
+      this.setState({
+        posts: posts.filter((posts, index) => index !== lastIndex),
+      });
+    }
+    console.log(posts);
   };
 
   //Предыдущий коммент(//Вот этот state с тремя записями мы передаем в Posts). Передаём вот сюда вниз..
@@ -22,7 +28,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Posts  posts={posts} handle={this.handleClick} />
+        <Gallery />
+        <Posts posts={posts} onDelete={this.deleteElem} />
       </div>
     );
   }
