@@ -1,9 +1,11 @@
 export function Post(props) {
-  const { name } = props;
+  //С помощью деструктуризации, которая ниже.. мы достаём id, name, onDelete.
+  const { id, name, onDelete } = props;
   return (
     <h2>
       {name}
-      <button onClick={props.onDelete} id="my-btn">
+      {/* c помощью анонимной функции мы передаем при клике id */}
+      <button onClick={() => onDelete(id)} id="my-btn">
         delete
       </button>
     </h2>

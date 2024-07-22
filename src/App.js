@@ -11,18 +11,21 @@ class App extends Component {
       { id: "my-rct", name: "React JS" },
     ],
   };
-  deleteElem = () => {
+  /* С помощью этой функции передаем id и фильтруем. Для обновления состояния используем setState.   */
+  deleteElem = (id) => {
     const posts = this.state.posts;
-    if (posts.length > 0) {
-      const lastIndex = posts.length - 1;
-      this.setState({
-        posts: posts.filter((posts, index) => index !== lastIndex),
-      });
-    }
-    console.log(posts);
+    console.log(id);
+    this.setState({ posts: posts.filter((post) => post.id !== id) });
+    // const posts = this.state.posts;
+    //удаляет элемент с полседнеего индекса
+    // if (posts.length > 0) {
+    //   const lastIndex = posts.length - 1;
+    //   this.setState({
+    //     posts: posts.filter((posts, index) => index !== lastIndex),
+    //   });
+    // }
+    // console.log(posts);
   };
-
-  //Предыдущий коммент(//Вот этот state с тремя записями мы передаем в Posts). Передаём вот сюда вниз..
   render() {
     const { posts } = this.state;
 
