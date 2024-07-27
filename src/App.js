@@ -1,20 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Clicker from "./components/Clicker";
 
 function App() {
-  const [value, setValue] = useState(0);
-
-  function increment() {
-    setValue(value + 1);
-  }
-
-  function decrement() {
-    setValue(value - 1);
-  }
+  //состояние, видим мы кликер на странице или нет(фолс - не видим, тру - видим)
+  const [isClicker, setClicker] = useState(false);
   return (
     <div className="App">
-      <button onClick={decrement}>-</button>
-      <span>{value}</span>
-      <button onClick={increment}>+</button>
+      <h2>React App</h2>
+      {/* кнопка, которая переключает состояние с фолс, на тру */}
+      <button onClick={() => setClicker(!isClicker)}>Toggle clicer</button>
+      {isClicker && <Clicker />}
     </div>
   );
 }
